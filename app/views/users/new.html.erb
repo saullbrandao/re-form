@@ -1,9 +1,9 @@
-<form accept-charset="UTF-8" method="post" action="/users">
-  <label for="user[username]">Username: </label>
-  <input type="text" name="user[username]" />
-  <label for="user[email]">Email: </label>
-  <input type="email" name="user[email]" />
-  <label for="user[password]">Password: </label>
-  <input type="password" name="user[password]" />
-  <button>Submit</button>
-</form>
+<%= form_with model: @user do |form| %>
+  <%= form.label :username, "Username: "  %>
+  <%= form.text_field :username, :placeholder => "test"  %>
+  <%= form.label :email, "Email: "  %>
+  <%= form.email_field :email, :placeholder => "example@example.com"  %>
+  <%= form.label :password, "Password: "  %>
+  <%= form.password_field :password %>
+  <%= form.submit "Submit" %>
+<% end %>
